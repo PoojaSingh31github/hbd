@@ -15,6 +15,7 @@ import img3 from "../assets/img/20260108_210913-COLLAGE.jpg";
 import img4 from "../assets/img/20260108_211124-COLLAGE.jpg";
 import img5 from "../assets/img/20260108_213050-COLLAGE.jpg";
 import img6 from "../assets/img/20260108_211319-COLLAGE.jpg";
+import birthdayMusic from "../assets/audio/01-Monk-Turner-Fascinoma-Its-Your-Birthday(chosic.com).mp3";
 export const BIRTHDAY_CONFIG = {
   recipientName: "Bhai",
   relationship: "brother", // "brother" | "sister" | "friend" etc.
@@ -166,8 +167,8 @@ export const ANIMATION_CONFIG = {
 // MUSIC CONFIGURATION
 // ============================================
 export const MUSIC_CONFIG = {
-  // Default music URL - replace with your own
-  url: "https://www.soundjay.com/free-music/sounds/happy-birthday-piano.mp3",
+  // Default music URL - using local audio file
+  url: birthdayMusic,
   volume: 0.3,
   loop: true,
 } as const;
