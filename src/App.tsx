@@ -1,0 +1,20 @@
+/**
+ * MAIN APP COMPONENT
+ * Sets up routing and global providers
+ */
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HomePage, NotFoundPage } from "./pages";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;

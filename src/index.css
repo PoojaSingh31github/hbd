@@ -1,0 +1,305 @@
+/**
+ * MERGED CSS STYLES
+ * - Combined the best theming approach: dark celebration theme as default
+ * - Merged glass-card styles from sooraj with premium card styles from bhai-9jan
+ * - Combined all gradient and glow effects
+ * - Unified custom component classes
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: #000000; /* light pink */
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+  background: #53022b; /* hot pink */
+  border-radius: 2px;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a0120; /* darker pink */
+}
+
+
+@layer base {
+  :root {
+    /* Dark Celebration Theme (merged from bhai-9jan with warm accents) */
+    --background: 240 30% 8%;
+    --foreground: 45 100% 96%;
+
+    --card: 240 25% 12%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 240 25% 12%;
+    --popover-foreground: 45 100% 96%;
+
+    --primary: 45 100% 60%;
+    --primary-foreground: 240 30% 8%;
+
+    --secondary: 220 80% 55%;
+    --secondary-foreground: 45 100% 96%;
+
+    --muted: 240 20% 20%;
+    --muted-foreground: 45 50% 80%;
+
+    --accent: 280 60% 65%;
+    --accent-foreground: 45 100% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 25%;
+    --input: 240 20% 20%;
+    --ring: 45 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom celebration colors (merged from both projects) */
+    --gold: 45 100% 60%;
+    --gold-light: 45 100% 75%;
+    --gold-glow: 45 100% 50%;
+    --royal-blue: 220 80% 55%;
+    --royal-blue-dark: 220 80% 35%;
+    --soft-purple: 280 60% 65%;
+    --soft-purple-light: 280 50% 80%;
+    --warm-pink: 340 80% 70%;
+    --cream: 45 100% 96%;
+    --cream-dark: 39 35% 90%;
+    --blush: 350 60% 88%;
+    --blush-deep: 350 50% 75%;
+    --coral: 15 75% 70%;
+    --sky: 200 50% 85%;
+    --sky-deep: 200 45% 70%;
+    --lavender: 270 40% 88%;
+
+    /* Gradients */
+    --gradient-celebration: linear-gradient(135deg, 
+      hsl(45 100% 60% / 0.2) 0%, 
+      hsl(280 60% 65% / 0.3) 50%, 
+      hsl(220 80% 55% / 0.2) 100%);
+    --gradient-hero: linear-gradient(180deg, 
+      hsl(240 30% 8%) 0%, 
+      hsl(280 40% 15%) 50%, 
+      hsl(220 50% 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, 
+      hsl(45 100% 60%) 0%, 
+      hsl(35 100% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, 
+      hsl(240 25% 14%) 0%, 
+      hsl(240 25% 10%) 100%);
+    --gradient-warm: linear-gradient(135deg, 
+      hsl(350 60% 88% / 0.1) 0%, 
+      hsl(45 100% 60% / 0.1) 100%);
+
+    /* Shadows */
+    --shadow-glow-gold: 0 0 30px hsl(45 100% 60% / 0.4);
+    --shadow-glow-purple: 0 0 30px hsl(280 60% 65% / 0.3);
+    --shadow-soft: 0 10px 40px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.3);
+    --shadow-float: 0 20px 40px -15px hsl(0 0% 0% / 0.25);
+
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-handwritten: 'Dancing Script', cursive;
+    --font-body: 'Poppins', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light theme option (from sooraj project) */
+  .light {
+    --background: 39 50% 97%;
+    --foreground: 30 20% 20%;
+    --card: 39 40% 95%;
+    --card-foreground: 30 20% 20%;
+    --popover: 39 40% 95%;
+    --popover-foreground: 30 20% 20%;
+    --primary: 36 70% 55%;
+    --primary-foreground: 39 50% 98%;
+    --secondary: 350 60% 88%;
+    --secondary-foreground: 350 40% 30%;
+    --muted: 39 30% 92%;
+    --muted-foreground: 30 15% 45%;
+    --accent: 200 50% 85%;
+    --accent-foreground: 200 40% 25%;
+    --border: 36 30% 85%;
+    --input: 36 30% 85%;
+    --gradient-hero: linear-gradient(180deg, hsl(200 60% 92%) 0%, hsl(350 50% 95%) 50%, hsl(39 50% 97%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* Font utilities */
+  .font-handwritten {
+    font-family: var(--font-handwritten);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-script {
+    font-family: var(--font-handwritten);
+  }
+
+  /* Text gradients */
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Background gradients */
+  .bg-celebration {
+    background: var(--gradient-celebration);
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  /* Glow effects */
+  .glow-gold {
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
+  }
+
+  /* Card styles - merged glass-card and premium card */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-premium {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Thought bubble styles */
+  .thought-bubble {
+    background: linear-gradient(145deg, 
+      hsl(var(--card)) 0%, 
+      hsl(240 25% 15%) 100%);
+    border: 1px solid hsl(45 100% 60% / 0.2);
+    box-shadow: 
+      0 4px 20px hsl(0 0% 0% / 0.2),
+      inset 0 1px 0 hsl(45 100% 60% / 0.1);
+  }
+
+  /* Handwritten card style */
+  .handwritten-card {
+    background: linear-gradient(135deg, 
+      hsl(45 40% 95%) 0%, 
+      hsl(45 30% 90%) 100%);
+    color: hsl(240 30% 20%);
+    box-shadow: 
+      0 20px 60px hsl(0 0% 0% / 0.3),
+      0 0 0 1px hsl(45 40% 85%);
+    transform: rotate(-1deg);
+  }
+
+  .handwritten-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        transparent,
+        transparent 28px,
+        hsl(220 40% 80% / 0.3) 28px,
+        hsl(220 40% 80% / 0.3) 29px
+      );
+    pointer-events: none;
+  }
+
+  /* Animation utilities */
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold-light)) 0%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-light)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-shadow-soft {
+    text-shadow: 0 2px 10px hsl(0 0% 0% / 0.3);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 20px hsl(45 100% 60% / 0.3);
+  }
+}
